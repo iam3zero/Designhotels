@@ -123,9 +123,11 @@ function addItem() {
 
   // 버튼 상태 변경
   if (added < filterData.length) {
-    loadMoreBtn.textContent = 'Load More';
+  loadMoreBtn.textContent = 'Load More';
+  loadMoreBtn.classList.remove('end');
   } else {
     loadMoreBtn.textContent = 'End';
+    loadMoreBtn.classList.add('end');
   }
 }
 

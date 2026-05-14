@@ -84,7 +84,9 @@ $('.mutedIcon').click(function(){
 });
 let nextTop=$('#section2').offset().top;
 $('.nextIcon').click(function(){
-    $(window).scrollTop(nextTop);
+    $('html, body').animate({
+        scrollTop: nextTop
+    }, 800, 'swing');
     return false;
 });
 
@@ -104,7 +106,7 @@ TrandingWrap.on({mousemove(e){
    /*  } */
 }})
 let tr=true
-$('.currency a').click(function(){
+$('.currency').hover(function(){
     if(tr===true){
         $('.currencys').css('display','block');
         tr=false;
