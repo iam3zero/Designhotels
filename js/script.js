@@ -93,18 +93,13 @@ $('.nextIcon').click(function(){
 
 
 //section3
-const TrandingWrap=$('.tranding-wrap');
+/* const TrandingWrap=$('.tranding-wrap');
 let offset=TrandingWrap.offset().left;
 console.log(offset)
 
 TrandingWrap.on({mousemove(e){
-    //console.log(e.pageX)
-/*     if(e.pageX >= 1920){
-        return false;
-    }else{ */
         $(this).css({left: -e.pageX})
-   /*  } */
-}})
+}}) */
 let tr=true
 $('.currency').hover(function(){
     if(tr===true){
@@ -114,4 +109,17 @@ $('.currency').hover(function(){
         $('.currencys').css('display','none');
         tr=true;
     }
+});
+const TrandingWrap = $('.tranding-wrap');
+
+function isMobile() {
+  return window.innerWidth <= 768;
+}
+
+TrandingWrap.on('mousemove', function(e){
+  if (isMobile()) return;
+
+  $(this).find('ul').css({
+    left: -e.pageX
+  });
 });
